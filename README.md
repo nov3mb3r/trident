@@ -1,5 +1,6 @@
 # TRIDENT
-TRiage & IDENTification for incident response
+<img src="https://raw.githubusercontent.com/nov3mb3r/trident/master/logo.PNG" width="550">
+
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
@@ -40,4 +41,4 @@ PS >.\trident.ps1 -a
 ```
 
 ## Example
-
+![](https://raw.githubusercontent.com/nov3mb3r/trident/master/example.PNG)
