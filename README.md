@@ -30,11 +30,11 @@ TRIDENT is a PowerShell script for fast triage and collection of evidence from f
 - Kerberos sessions
 
 ## Usage
-Using administrative privileges, just run the script from a PowerShell console:
+Using administrative privileges, just run the script from a PowerShell console
 ```powershell
 PS >.\trident.ps1
 ```
-s
+
 For Advanced collection
 ```powershell
 PS >.\trident.ps1 -a
