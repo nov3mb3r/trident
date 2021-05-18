@@ -85,7 +85,7 @@ tasklist /v /fo table /fi "STATUS ne Unknown"
 "
 
 "--- Process List ---"
-Get-Process -IncludeUserName | Format-Table -Property Name, Id, Path, UserName, Company, Handles, StartTime, HasExited
+Get-Process -IncludeUserName | Format-Table -Property Name, Id, Path, UserName, Company, Handles, StartTime, HasExited -Wrap
 "----------------------------------------
 "
 
@@ -96,17 +96,17 @@ Get-WmiObject Win32_Process | Select-Object Name,  ProcessId, CommandLine | Sort
 
 "==== PERSISTENCE ===="
 "--- Commands on Startup ---"
-Get-CimInstance -Class Win32_StartupCommand | Format-Table -Property Name, Command, User, Location
+Get-CimInstance -Class Win32_StartupCommand | Format-Table -Property Name, Command, User, Location -Wrap
 "----------------------------------------
 "
 
 "--- Scheduled Tasks ---"
-(Get-ScheduledTask).Where({$_.State -ne "Disabled"}) | Sort TaskPath | Format-Table -Auto
+(Get-ScheduledTask).Where({$_.State -ne "Disabled"}) | Sort TaskPath | Format-Table -Wrap
 "----------------------------------------
 "
 
 "--- Services ---"
-Get-WmiObject win32_service | Select-Object Name, PathName, StartName, StartMode, State, ProcessId | Sort PathName| Format-Table
+Get-WmiObject win32_service | Select-Object Name, PathName, StartName, StartMode, State, ProcessId | Sort PathName| Format-Table -Wrap
 #Get-CimInstance -Class Win32_Service -Filter "Caption LIKE '%'" | Select-Object Name, PathName, ProcessId, StartMode, State | Format-Table
 "----------------------------------------
 "
