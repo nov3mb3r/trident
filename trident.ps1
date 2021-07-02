@@ -170,6 +170,12 @@ Get-ChildItem -Path '\\.\pipe\' |  Sort FullName | Format-Table FullName, Length
 "----------------------------------------
 "
 
+"--- RDP sessions ---"
+qwinsta /server:localhost
+"----------------------------------------
+"
+
+
 "--- Kerberos sessions ---"
 klist sessions
 "----------------------------------------
