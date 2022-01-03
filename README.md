@@ -8,26 +8,32 @@ TRIDENT is a PowerShell script for fast triage and collection of evidence from f
 
 ## Breakdown of collection details
 ### Network
-- Active Network Interfaces
-- DNS Cache
+- Active network interfaces
+- DNS cache
 - Shared folders
 - Connections by spawned processes
 
 ### Process Information
 - Running processes
-- Process Commandline
+- Process commandline
 
 ### Persistence
 - Commands on Startup
-- Scheduled Tasks
+- Scheduled tasks
 - Services
+
+### User activity
+- Recent USB devices
+- Recent files
+- PowerShell history
+- SMB sessions
+- RDP sessions
 
 ### Advanced
 - Prefetch file information
 - DLL List
 - WMI filters and consumers
 - Named pipes
-- RDP sessions
 - Kerberos sessions
 
 ## Usage
