@@ -112,8 +112,14 @@ Get-WmiObject win32_service | Select-Object Name, PathName, StartName, StartMode
 "
 
 "==== USER ACTIVITY ===="
-"--- Recently Used USB Devices ---"
+"--- Recently used USB devices ---"
 Get-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Enum\USBSTOR\*\* | Select FriendlyName
+"----------------------------------------
+"
+
+"--- Recently modified files ---"
+$RecentFiles = Get-ChildItem -Path $env:USERPROFILE -Recurse -File
+$RecentFiles | Sort-Object LastWriteTime -Descending | Select-Object -First 50 FullName, LastWriteTime
 "----------------------------------------
 "
 
@@ -127,9 +133,8 @@ Get-SmbSession
 "----------------------------------------
 "
 
-"--- Recent Files ---"
-$RecentFiles = Get-ChildItem -Path $env:USERPROFILE -Recurse -File
-$RecentFiles | Sort-Object LastWriteTime -Descending | Select-Object -First 50 FullName, LastWriteTime
+"--- RDP sessions ---"
+qwinsta /server:localhost
 "----------------------------------------
 "
 
@@ -175,12 +180,6 @@ Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\Windows Defender\Exclusions'
 Get-ChildItem -Path '\\.\pipe\' |  Sort FullName | Format-Table FullName, Length, IsReadOnly, Exists, Extension, CreationTime, LastAccessTime
 "----------------------------------------
 "
-
-"--- RDP sessions ---"
-qwinsta /server:localhost
-"----------------------------------------
-"
-
 
 "--- Kerberos sessions ---"
 klist sessions
