@@ -26,6 +26,7 @@ TRIDENT is a PowerShell script for fast triage and collection of evidence from f
 - Recent USB devices
 - Recent files
 - PowerShell history
+- Kerberos sessions
 - SMB sessions
 - RDP sessions
 
@@ -34,7 +35,6 @@ TRIDENT is a PowerShell script for fast triage and collection of evidence from f
 - DLL List
 - WMI filters and consumers
 - Named pipes
-- Kerberos sessions
 
 ## Usage
 Using administrative privileges, just run the script from a PowerShell console
