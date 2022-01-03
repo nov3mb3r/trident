@@ -127,6 +127,12 @@ Get-SmbSession
 "----------------------------------------
 "
 
+"--- Recent Files ---"
+$RecentFiles = Get-ChildItem -Path $env:USERPROFILE -Recurse -File
+$RecentFiles | Sort-Object LastWriteTime -Descending | Select-Object -First 50 FullName, LastWriteTime
+"----------------------------------------
+"
+
 if ($a -eq $true)
 {
 "==== ADVANCED INVESTIGATION ===="
