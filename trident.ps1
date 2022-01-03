@@ -128,6 +128,11 @@ history
 "----------------------------------------
 "
 
+"--- Kerberos sessions ---"
+klist sessions
+"----------------------------------------
+"
+
 "--- SMB sessions ---"
 Get-SmbSession
 "----------------------------------------
@@ -147,7 +152,7 @@ Get-Process | Group-Object ProcessName | Select Count, Name | Sort Count -Descen
 "
 
 "--- Prefetch files ---"
-gci C:\Windows\Prefetch\| Sort Name |Format-Table Name,CreationTime,LastWriteTime,LastAccessTime
+gci C:\Windows\Prefetch\ | Sort Name | Format-Table Name,CreationTime,LastWriteTime,LastAccessTime
 "----------------------------------------
 "
 
@@ -176,15 +181,11 @@ Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\Windows Defender\Exclusions'
 "----------------------------------------
 "
 
-"--- Named Pipes ---"
-Get-ChildItem -Path '\\.\pipe\' |  Sort FullName | Format-Table FullName, Length, IsReadOnly, Exists, Extension, CreationTime, LastAccessTime
+"--- Named Pipes List ---"
+Get-ChildItem -Path '\\.\pipe\' |  Sort Length | Format-Table FullName, Length, IsReadOnly, Exists, CreationTime, LastAccessTime
 "----------------------------------------
 "
 
-"--- Kerberos sessions ---"
-klist sessions
-"----------------------------------------
-"
 }
 
 }
