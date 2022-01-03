@@ -22,7 +22,7 @@ TRIDENT is a PowerShell script for fast triage and collection of evidence from f
 - Scheduled tasks
 - Services
 
-### User activity
+### User account activity
 - Recent USB devices
 - Recent files
 - PowerShell history
