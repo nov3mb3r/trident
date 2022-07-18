@@ -7,6 +7,11 @@
 TRIDENT is a PowerShell script for fast triage and collection of evidence from forensic artifacts and volatile data, aimed to assist in the identification of compromise in Windows systems. The collected data will be stored inside a text file named after the hostname of the system.
 
 ## Breakdown of collection details
+
+### General information
+- Group policy settings
+- Encryption information
+
 ### Network
 - Active network interfaces
 - DNS cache
