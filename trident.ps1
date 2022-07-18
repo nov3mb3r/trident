@@ -50,6 +50,16 @@ systeminfo
 "----------------------------------------
 "
 
+"--- Group policy settings ---"
+gpresult.exe -z
+"----------------------------------------
+"
+
+"--- Encryption information ---"
+manage-bde.exe -status
+"----------------------------------------
+"
+
 "==== NETWORK INFORMATION ===="
 "--- Active Network Interfaces ---"
 Get-NetAdapter | ? status -eq "up" |  Get-NetIPAddress | Select IPAddress,InterfaceIndex, InterfaceAlias, AddressFamily,PrefixOrigin |Sort InterfaceAlias | Format-Table -Wrap
